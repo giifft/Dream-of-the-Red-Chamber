@@ -1,0 +1,87 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs and Editors
+.vscode/*
+!.vscode/extensions.json
+.history/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.patch
+*.diff
+cmake-build-*/
+out/
+build/
+
+
+# Node (if applicable)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Python (if applicable)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Agent local artifacts & caches
+.gemini/
+.codebuddy/
+.workbuddy/
+.system_generated/
+logs/
+*.log
+brain/
+scratch/
+task.md
+implementation_plan.md
+walkthrough.md
+
+# AI Tools (Cursor, Windsurf, Aider, Cline, Roo Code, etc.)
+.cursor/
+.windsurf/
+.trae/
+.cline/
+.roocode/
+.aider.chat.history.md
+.aider.input.history
+.aider.tags.cache.v3
+*.aider.chat.history.md
+.claude_code/
+.claude/
+.copilot/
+.github/copilot-history/
+
+# Self-evolution learnings (internal audit traces, not for external distribution)
+# learnings/README.md 保留外发（说明文档）
+learnings/successful_patterns.md
+learnings/bad_cases.md
+learnings/evolution_log.md
+learnings/checkpoint.json
+skills/dream-team-workflow/learnings/successful_patterns.md
+skills/dream-team-workflow/learnings/bad_cases.md
+skills/dream-team-workflow/learnings/evolution_log.md
+skills/dream-team-workflow/learnings/checkpoint.json
+
+# Local-only config (contains machine-specific paths, not for distribution)
+.agents/
+settings.json
+

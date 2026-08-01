@@ -1,0 +1,26 @@
+{
+  "name": "dream-of-the-red-chamber",
+  "version": "1.9.3",
+  "description": "红楼智数专家团 — 9 角色全栈开发与数据智能协作团队，覆盖 PRD 到 DevOps 全链路",
+  "author": {
+    "name": "giifft"
+  },
+  "license": "MIT",
+  "keywords": ["全栈开发", "多角色协作", "SOP", "企业安全", "自进化"],
+  "skills": "./skills",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "红楼智数专家团",
+    "shortDescription": "9 角色全栈协作团队，覆盖 PRD → 架构 → 编码 → 测试 → 部署",
+    "longDescription": "红楼智数专家团是一个 9 人全栈开发与数据智能协作团队，由王熙凤（交付总监）统一调度，涵盖林黛玉（产品经理）、惜春（UI/UX）、妙玉（AI 工程师）、香菱（ML 工程师）、贾宝玉（架构师）、薛宝钗（工程师）、紫鹃（QA）、探春（DevOps）。支持标准 SOP、快速模式、BugFix 快捷路径、AI-RAG 敏捷战队等多种工作流，内建企业级 4A 安全合规与自进化防退化学习机制。",
+    "developerName": "giifft",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "帮我构建一个企业级数据分析平台，包含权限管理和可视化大屏",
+      "对现有系统进行4A安全审计，输出合规评估报告",
+      "帮我开发一个 MCP Server，暴露 API 为工具"
+    ],
+    "brandColor": "#8B1A1A"
+  }
+}

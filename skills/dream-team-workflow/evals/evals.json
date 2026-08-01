@@ -1,0 +1,375 @@
+{
+  "skill_name": "dream-team-workflow",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我开发一个全栈待办事项应用，前端用 React，后端用 Python FastAPI，数据库用 SQLite",
+      "expected_output": "包含完整的前后端代码文件、数据库 schema、API 接口定义，以及启动说明",
+      "workflow_type": "快速模式",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "分析这个 CSV 数据集（sales_data.csv），设计可视化图表，并生成一份完整的数据画像报告",
+      "expected_output": "数据清洗后的清洗报告、可视化图表（柱状图/折线图等）、数据画像报告包含统计摘要、异常值检测、业务洞察",
+      "workflow_type": "敏捷战队(算法建模)",
+      "files": ["sales_data.csv"]
+    },
+    {
+      "id": 3,
+      "prompt": "我报告一个 Bug：用户登录后访问 /dashboard 页面显示 403 错误，但直接访问 /api/data 接口是正常的",
+      "expected_output": "Bug 定位分析、修复方案、修复后代码、回归测试结果",
+      "workflow_type": "BugFix",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "帮我设计一个电商平台的系统架构，需要支持日活 10 万用户，支持高并发秒杀，包含部署方案",
+      "expected_output": "系统架构图、微服务划分、数据库选型、缓存策略、负载均衡方案、容器化部署配置",
+      "workflow_type": "标准SOP",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "构建一个支持 4A 统一认证（单点登录）、数据库行级权限隔离的智能问答系统，带 RAG 知识库检索",
+      "expected_output": "4A 认证架构设计、RLS Schema、权限拦截器代码、RAG 检索逻辑、带权限的向量查询设计、安全测试用例",
+      "workflow_type": "标准SOP+AI+安全",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "修复系统中的权限拦截器漏洞，有用户反馈可以通过修改 URL 参数越权查看其他用户的数据",
+      "expected_output": "安全漏洞定位分析、越权修复方案、修复后代码、安全测试用例",
+      "workflow_type": "敏捷战队(安全加固)",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "设计一个带 HITL（Human-in-the-loop）审批节点的客服 Agent 工作流，使用 LangGraph 实现，需要工具注册表和记忆架构，支持多轮对话状态持久化",
+      "expected_output": "Agent 拓扑设计、工具注册表、记忆/状态持久化方案、LangGraph 代码实现、HITL 节点设计、黄金轨迹评估用例",
+      "workflow_type": "AI-Agent 战队",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "帮我把现有的单 Agent 系统重构为多 Agent 协作架构，需要拆分工具注册、增加 checkpoint 机制、并建立 Agent 评估基准",
+      "expected_output": "多 Agent 架构设计、拆分后的工具注册表、Checkpoint Schema、Agent 评估基准方案、重构后代码",
+      "workflow_type": "AI-Agent 战队",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "帮我开发一个 GitHub MCP 服务器，使用 FastMCP 框架，需要支持搜索仓库、获取 Issue 列表、创建 Issue 三个工具",
+      "expected_output": "MCP 工具设计（Input/Output Schema）、服务器架构设计、FastMCP 代码实现、MCP Inspector 测试报告、评测用例",
+      "workflow_type": "MCP Server 战队",
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "为我的项目设计一组 MCP 工具，使用 stdio 传输协议，支持数据库查询和文件操作，需要分页和错误处理",
+      "expected_output": "MCP 工具 Schema 设计（含 Annotations）、传输协议配置、TypeScript SDK 实现、分页与错误处理逻辑、MCP Inspector 评测报告",
+      "workflow_type": "MCP Server 战队",
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "线上智能客服系统的 RAG 知识库出现模型幻觉，用户反馈回答与文档不符，需要更新知识库并做回归评测",
+      "expected_output": "Bad Case 收集分析、知识库增量更新方案、RAG 检索优化、回归评测报告、影子部署验证",
+      "workflow_type": "LLMOps",
+      "files": []
+    },
+    {
+      "id": 12,
+      "prompt": "帮我优化客服机器人的 Prompt 模板和 RAG 检索策略，当前回答命中率太低，需要调优",
+      "expected_output": "Prompt 模板优化方案、RAG chunk 策略调整、embedding 模型选型、A/B 评测对比报告",
+      "workflow_type": "敏捷战队(AI-RAG)",
+      "files": []
+    },
+    {
+      "id": 13,
+      "prompt": "为长时间运行的 AI Agent 系统设计 AgentOps 可观测性看板，需要监控成功率、延迟、Token 消耗和护栏触发频率",
+      "expected_output": "AgentOps 可观测性架构设计、监控指标定义、护栏配置方案、看板布局",
+      "workflow_type": "AI-Agent 战队",
+      "files": []
+    },
+    {
+      "id": 14,
+      "prompt": "基于 MCP 2026-07-28 无状态协议规范，设计并实现一个支持 Streamable HTTP 和 OAuth 2.1 PKCE 的 MCP Server",
+      "expected_output": "无状态 MCP Server 架构设计、Streamable HTTP 传输实现、OAuth 2.1 PKCE 集成、server.json 配置",
+      "workflow_type": "MCP Server 战队",
+      "files": []
+    },
+    {
+      "id": 15,
+      "prompt": "设计 Self-Healing 自愈基础设施，包含健康检查探针、自动故障转移、熔断器和恢复策略，用于微服务集群",
+      "expected_output": "自愈基础设施架构、健康检查机制、熔断器配置、自动故障转移流程",
+      "workflow_type": "标准SOP",
+      "files": []
+    },
+    {
+      "id": 16,
+      "prompt": "构建一个 GraphRAG 知识图谱检索系统，支持图嵌入和推理时 scaling，用于复杂关系查询",
+      "expected_output": "GraphRAG 架构设计、知识图谱构建方案、图嵌入模型选型、推理时 scaling 策略",
+      "workflow_type": "AI-Agent 战队",
+      "files": []
+    }
+  ],
+  "assertions": [
+    {
+      "id": 1,
+      "eval_id": 1,
+      "name": "包含前端代码文件",
+      "description": "输出包含 React 组件文件（.jsx 或 .tsx）",
+      "type": "file_exists",
+      "pattern": "**/*.{jsx,tsx}"
+    },
+    {
+      "id": 2,
+      "eval_id": 1,
+      "name": "包含后端 API 代码",
+      "description": "输出包含 FastAPI 后端代码文件",
+      "type": "file_exists",
+      "pattern": "**/*.{py}"
+    },
+    {
+      "id": 3,
+      "eval_id": 1,
+      "name": "包含启动说明",
+      "description": "包含运行命令和启动步骤",
+      "type": "text_contains",
+      "keywords": ["npm install", "uvicorn", "启动"]
+    },
+    {
+      "id": 4,
+      "eval_id": 2,
+      "name": "包含数据分析代码",
+      "description": "包含 Python 数据处理/分析脚本",
+      "type": "file_exists",
+      "pattern": "**/*.{py,ipynb}"
+    },
+    {
+      "id": 5,
+      "eval_id": 2,
+      "name": "包含可视化图表",
+      "description": "生成图表（matplotlib/seaborn/plotly 图表代码或图片）",
+      "type": "text_contains",
+      "keywords": ["plt.", "plot(", "echarts", "chart"]
+    },
+    {
+      "id": 6,
+      "eval_id": 2,
+      "name": "包含数据画像报告",
+      "description": "输出包含数据统计摘要和洞察",
+      "type": "text_contains",
+      "keywords": ["统计", "summary", "洞察", "insight", "统计摘要"]
+    },
+    {
+      "id": 7,
+      "eval_id": 3,
+      "name": "包含 Bug 定位分析",
+      "description": "明确指出问题根源",
+      "type": "text_contains",
+      "keywords": ["问题", "原因", "定位", "403", "权限"]
+    },
+    {
+      "id": 8,
+      "eval_id": 3,
+      "name": "包含修复代码",
+      "description": "提供修复后的代码片段",
+      "type": "text_contains",
+      "keywords": ["def ", "function", "修复", "fix", "="]
+    },
+    {
+      "id": 9,
+      "eval_id": 4,
+      "name": "包含架构设计",
+      "description": "包含系统架构说明",
+      "type": "text_contains",
+      "keywords": ["架构", "architecture", "微服务", "microservice"]
+    },
+    {
+      "id": 10,
+      "eval_id": 4,
+      "name": "包含部署方案",
+      "description": "包含部署配置或 Kubernetes/Docker 配置",
+      "type": "text_contains",
+      "keywords": ["部署", "deploy", "docker", "kubernetes", "k8s"]
+    },
+    {
+      "id": 11,
+      "eval_id": 5,
+      "name": "包含 4A 认证设计",
+      "description": "包含认证授权架构设计",
+      "type": "text_contains",
+      "keywords": ["4A", "SSO", "OAuth", "认证", "authentication"]
+    },
+    {
+      "id": 12,
+      "eval_id": 5,
+      "name": "包含权限隔离设计",
+      "description": "包含 RLS 或行级权限设计",
+      "type": "text_contains",
+      "keywords": ["RLS", "行级", "权限隔离", "row-level"]
+    },
+    {
+      "id": 13,
+      "eval_id": 5,
+      "name": "包含 RAG 检索设计",
+      "description": "包含向量检索和知识库设计",
+      "type": "text_contains",
+      "keywords": ["RAG", "向量", "vector", "embedding", "检索"]
+    },
+    {
+      "id": 14,
+      "eval_id": 6,
+      "name": "包含越权漏洞分析",
+      "description": "包含安全漏洞定位和越权修复方案",
+      "type": "text_contains",
+      "keywords": ["越权", "权限", "漏洞"]
+    },
+    {
+      "id": 15,
+      "eval_id": 6,
+      "name": "包含安全修复代码",
+      "description": "包含权限修复相关的代码或配置",
+      "type": "text_contains",
+      "keywords": ["权限", "拦截", "修复", "安全"]
+    },
+    {
+      "id": 16,
+      "eval_id": 7,
+      "name": "包含 Agent 拓扑设计",
+      "description": "包含 Agent 工作流拓扑结构说明",
+      "type": "text_contains",
+      "keywords": ["Agent", "拓扑", "topology", "节点", "node"]
+    },
+    {
+      "id": 17,
+      "eval_id": 7,
+      "name": "包含工具注册表",
+      "description": "包含工具注册表或 Tool Registry 设计",
+      "type": "text_contains",
+      "keywords": ["工具注册", "Tool Registry", "tool", "注册表"]
+    },
+    {
+      "id": 18,
+      "eval_id": 7,
+      "name": "包含 HITL 节点设计",
+      "description": "包含 Human-in-the-loop 审批节点设计",
+      "type": "text_contains",
+      "keywords": ["HITL", "Human-in-the-loop", "人工审批", "审批节点"]
+    },
+    {
+      "id": 19,
+      "eval_id": 7,
+      "name": "包含状态持久化方案",
+      "description": "包含记忆架构或状态持久化设计",
+      "type": "text_contains",
+      "keywords": ["记忆", "memory", "checkpoint", "状态持久化", "persistence"]
+    },
+    {
+      "id": 20,
+      "eval_id": 8,
+      "name": "包含多 Agent 架构设计",
+      "description": "包含多 Agent 协作架构说明",
+      "type": "text_contains",
+      "keywords": ["多Agent", "multi-agent", "协作架构", "Agent拆分"]
+    },
+    {
+      "id": 21,
+      "eval_id": 8,
+      "name": "包含 Agent 评估基准",
+      "description": "包含 Agent 评估基准或黄金轨迹设计",
+      "type": "text_contains",
+      "keywords": ["评估", "benchmark", "黄金轨迹", "golden trajectory", "评估基准"]
+    },
+    {
+      "id": 22,
+      "eval_id": 9,
+      "name": "包含 MCP 工具设计",
+      "description": "包含 MCP 工具 Schema 设计",
+      "type": "text_contains",
+      "keywords": ["MCP", "工具", "tool", "schema", "Tool"]
+    },
+    {
+      "id": 23,
+      "eval_id": 9,
+      "name": "包含 FastMCP 代码实现",
+      "description": "包含 FastMCP 框架的 Python 代码",
+      "type": "text_contains",
+      "keywords": ["FastMCP", "mcp.server", "server.run", "async def"]
+    },
+    {
+      "id": 24,
+      "eval_id": 10,
+      "name": "包含传输协议配置",
+      "description": "包含 stdio 传输协议配置",
+      "type": "text_contains",
+      "keywords": ["stdio", "transport", "传输协议", "Communicate"]
+    },
+    {
+      "id": 25,
+      "eval_id": 10,
+      "name": "包含分页与错误处理",
+      "description": "包含分页逻辑和错误处理设计",
+      "type": "text_contains",
+      "keywords": ["分页", "pagination", "错误处理", "error handling", "try"]
+    },
+    {
+      "id": 26,
+      "eval_id": 13,
+      "name": "包含 AgentOps 可观测性设计",
+      "description": "包含 AgentOps 监控看板和可观测性架构",
+      "type": "text_contains",
+      "keywords": ["AgentOps", "可观测", "监控", "看板", "observability"]
+    },
+    {
+      "id": 27,
+      "eval_id": 13,
+      "name": "包含护栏配置",
+      "description": "包含护栏（Guardrails）配置方案",
+      "type": "text_contains",
+      "keywords": ["护栏", "guardrail", "熔断", "预算", "budget"]
+    },
+    {
+      "id": 28,
+      "eval_id": 14,
+      "name": "包含无状态协议设计",
+      "description": "包含 MCP 2026 无状态协议架构",
+      "type": "text_contains",
+      "keywords": ["无状态", "stateless", "MCP 2026", "Streamable HTTP"]
+    },
+    {
+      "id": 29,
+      "eval_id": 14,
+      "name": "包含 OAuth 2.1 PKCE 设计",
+      "description": "包含 OAuth 2.1 PKCE 认证集成",
+      "type": "text_contains",
+      "keywords": ["OAuth", "PKCE", "认证", "authorization"]
+    },
+    {
+      "id": 30,
+      "eval_id": 15,
+      "name": "包含自愈基础设施设计",
+      "description": "包含 Self-Healing 自愈架构设计",
+      "type": "text_contains",
+      "keywords": ["自愈", "self-healing", "自动重启", "健康检查", "checkpoint"]
+    },
+    {
+      "id": 31,
+      "eval_id": 16,
+      "name": "包含 GraphRAG 架构设计",
+      "description": "包含 GraphRAG 知识图谱检索架构",
+      "type": "text_contains",
+      "keywords": ["GraphRAG", "知识图谱", "图嵌入", "graph embedding", "图检索"]
+    },
+    {
+      "id": 32,
+      "eval_id": 16,
+      "name": "包含推理时 scaling 策略",
+      "description": "包含 inference-time scaling 推理时扩展策略",
+      "type": "text_contains",
+      "keywords": ["推理时", "inference", "scaling", "reasoning", "推理"]
+    }
+  ]
+}

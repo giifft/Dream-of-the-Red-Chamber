@@ -1,0 +1,116 @@
+{
+  "name": "dream-of-the-red-chamber",
+  "version": "1.9.3",
+  "description": "A 9-role full-stack development and data intelligence team covering PRD, UI/UX, AI/RAG, ML, architecture, engineering, QA, and DevOps. Deeply supports enterprise security (4A auth, RLS, data masking) and AI Agent safety.",
+  "author": {
+    "name": "giifft"
+  },
+  "expertType": "team",
+  "agentName": "dream-of-the-red-chamber-team-lead",
+  "agents": [
+    "./agents/dream-of-the-red-chamber-team-lead.md",
+    "./agents/dream-of-the-red-chamber-product-manager.md",
+    "./agents/dream-of-the-red-chamber-ui-designer.md",
+    "./agents/dream-of-the-red-chamber-ai-engineer.md",
+    "./agents/dream-of-the-red-chamber-ml-engineer.md",
+    "./agents/dream-of-the-red-chamber-architect.md",
+    "./agents/dream-of-the-red-chamber-engineer.md",
+    "./agents/dream-of-the-red-chamber-qa-engineer.md",
+    "./agents/dream-of-the-red-chamber-devops.md"
+  ],
+  "teamInfo": {
+    "leadAgent": "dream-of-the-red-chamber-team-lead",
+    "memberAgents": [
+      "dream-of-the-red-chamber-product-manager",
+      "dream-of-the-red-chamber-ui-designer",
+      "dream-of-the-red-chamber-ai-engineer",
+      "dream-of-the-red-chamber-ml-engineer",
+      "dream-of-the-red-chamber-architect",
+      "dream-of-the-red-chamber-engineer",
+      "dream-of-the-red-chamber-qa-engineer",
+      "dream-of-the-red-chamber-devops"
+    ]
+  },
+  "displayName": "红楼梦智数开发团",
+  "profession": "全栈开发与数据智能团队",
+  "skills": ["./skills/dream-team-workflow"],
+  "displayDescription": "全栈开发与智数分析专家团，覆盖PRD到DevOps全链路，深度融合企业4A安全合规与AI智能体能力。",
+  "avatar": "avatars/team.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": "帮我构建一个企业级数据分析平台，包含权限管理和可视化大屏",
+  "plugin": "dream-of-the-red-chamber",
+  "tags": ["全栈开发", "数据智能", "安全合规", "A2A", "HOTOL", "MCP-2026", "AgentOps", "LongRunning", "Stateless", "GraphRAG", "ComputerUse", "MCP-Apps"],
+  "quickPrompts": [
+    "帮我构建一个企业级数据分析平台，包含权限管理和可视化大屏",
+    "对现有系统进行4A安全审计，输出合规评估报告",
+    "帮我开发一个 MCP Server，把我的 API 暴露为 Claude/Cursor 可调用的工具",
+    "设计一个支持 A2A 协议的多 Agent 协作系统",
+    "基于 MCP 2026-07-28 无状态协议规范，设计并实现一个支持 Streamable HTTP 和 OAuth 2.1 的 MCP Server",
+    "为长时间运行的 AI Agent 系统设计自愈基础设施与 AgentOps 可观测性看板"
+  ],
+  "members": [
+    {
+      "id": "dream-of-the-red-chamber-team-lead",
+      "displayName": "王熙凤",
+      "profession": "交付总监",
+      "avatar": "avatars/dream-of-the-red-chamber-team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "dream-of-the-red-chamber-product-manager",
+      "displayName": "林黛玉",
+      "profession": "产品经理",
+      "avatar": "avatars/dream-of-the-red-chamber-product-manager.png",
+      "role": "member"
+    },
+    {
+      "id": "dream-of-the-red-chamber-ui-designer",
+      "displayName": "惜春",
+      "profession": "UI/UX设计师",
+      "avatar": "avatars/dream-of-the-red-chamber-ui-designer.png",
+      "role": "member"
+    },
+    {
+      "id": "dream-of-the-red-chamber-ai-engineer",
+      "displayName": "妙玉",
+      "profession": "AI工程师",
+      "avatar": "avatars/dream-of-the-red-chamber-ai-engineer.png",
+      "role": "member"
+    },
+    {
+      "id": "dream-of-the-red-chamber-ml-engineer",
+      "displayName": "香菱",
+      "profession": "ML工程师",
+      "avatar": "avatars/dream-of-the-red-chamber-ml-engineer.png",
+      "role": "member"
+    },
+    {
+      "id": "dream-of-the-red-chamber-architect",
+      "displayName": "贾宝玉",
+      "profession": "架构师",
+      "avatar": "avatars/dream-of-the-red-chamber-architect.png",
+      "role": "member"
+    },
+    {
+      "id": "dream-of-the-red-chamber-engineer",
+      "displayName": "薛宝钗",
+      "profession": "工程师",
+      "avatar": "avatars/dream-of-the-red-chamber-engineer.png",
+      "role": "member"
+    },
+    {
+      "id": "dream-of-the-red-chamber-qa-engineer",
+      "displayName": "紫鹃",
+      "profession": "QA工程师",
+      "avatar": "avatars/dream-of-the-red-chamber-qa-engineer.png",
+      "role": "member"
+    },
+    {
+      "id": "dream-of-the-red-chamber-devops",
+      "displayName": "探春",
+      "profession": "DevOps工程师",
+      "avatar": "avatars/dream-of-the-red-chamber-devops.png",
+      "role": "member"
+    }
+  ]
+}
