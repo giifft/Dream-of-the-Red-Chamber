@@ -191,78 +191,81 @@ def learnings_search(query: str, category: str = "all") -> str:
 # ──────────────────────────────────────────────
 
 WORKFLOW_RULES = [
-    # (关键词列表, 工作流名称, 描述)
-    # 关键词与 route_workflow.py WORKFLOW_RULES 精确对齐
-    # route_workflow.py 使用 regex，server.py 使用 plain string substring matching
+    # (regex 模式列表, 工作流名称, 描述)
+    # 模式与 route_workflow.py WORKFLOW_RULES 语义对齐（route_workflow.py 匹配前
+    # 先 lower()，模式一律用小写；通配符语义如 .? / .* 保留 regex 写法）。
+    # 匹配方式：re.search(pattern, req_lower)，见 workflow_route()。
 
     # BugFix 优先 — 与 route_workflow.py BUGFIX 组对齐（18个）
-    (["bug", "修复", "fix", "报错", "崩溃",
-      "闪退", "出错了", "不能用了", "403", "404", "500", "error",
-      "bad case", "幻觉", "漂移", "跑不通", "报错信息", "编译失败"],
+    ([r"bug", r"修复", r"fix", r"报错", r"崩溃",
+      r"闪退", r"出错了", r"不能用了", r"403", r"404", r"500", r"error",
+      r"bad case", r"幻觉", r"漂移", r"跑不通", r"报错信息", r"编译失败"],
      "🔧 BugFix 快捷路径", "明确 Bug 报告，非新功能"),
 
     # 线上反馈 - LLMOps — 与 route_workflow.py LLMOPS 组对齐（9个）
-    (["线上", "生产", "生产环境", "bad case", "模型幻觉", "模型漂移",
-      "知识库更新", "知识库增删", "线上监控"],
+    ([r"线上", r"生产", r"生产环境", r"bad case", r"模型幻觉", r"模型漂移",
+      r"知识库更新", r"知识库增删", r"线上监控"],
      "🔄 LLMOps 反馈闭环", "线上 Bad Case 反馈"),
 
     # 安全加固专项 — 与 route_workflow.py AGILE_SEC 组对齐（10个）
-    (["4a", "权限", "鉴权", "脱敏", "越权",
-      "安全漏洞", "注入", "sso", "rbac", "abac"],
+    ([r"4a", r"权限", r"鉴权", r"脱敏", r"越权",
+      r"安全漏洞", r"注入", r"sso", r"rbac", r"abac"],
      "🎯 安全加固敏捷战队", "4A/脱敏/权限修复"),
 
     # AI-Agent 战队专项 — 与 route_workflow.py AGILE_AGENT 组对齐（35个）
-    (["agent工作流", "agent拓扑", "工具注册", "tool registry",
-      "记忆架构", "memory架构", "checkpoint", "状态持久化",
-      "hitl", "human-in-the-loop", "黄金轨迹", "golden trajectory",
-      "langgraph", "autogen", "crewai", "agent评估",
-      "agent工具开发", "agent重构", "多agent", "agent协作",
-      "agentops", "agent可观测", "agent护栏",
-      "long-running", "长时agent", "异步编排",
-      "computer use", "browser agent", "浏览器操作",
-      "agentic rag", "graphrag", "图检索",
-      "inference time", "reasoning model", "推理时"],
+    ([r"agent工作流", r"agent拓扑", r"工具注册", r"tool registry",
+      r"记忆架构", r"memory架构", r"checkpoint", r"状态持久化",
+      r"hitl", r"human.?in.?the.?loop", r"黄金轨迹", r"golden trajectory",
+      r"langgraph", r"autogen", r"crewai", r"agent评估",
+      r"agent工具开发", r"agent重构", r"多agent", r"agent协作",
+      r"agentops", r"agent.*可观测", r"agent.*护栏",
+      r"long.?running", r"长时.*agent", r"异步编排",
+      r"computer.?use", r"browser.?agent", r"浏览器操作",
+      r"agentic.*rag", r"graphrag", r"图检索",
+      r"inference.?time", r"reasoning.*model", r"推理时"],
      "🤖 AI-Agent 战队", "Agent 拓扑设计、工具注册、记忆架构、HITL、AgentOps"),
 
-    # MCP Server 战队专项 — 与 route_workflow.py AGILE_MCP 组对齐（28个）
-    (["mcp", "model context protocol", "mcp server", "mcp服务",
-      "mcp服务器", "fastmcp", "mcp sdk", "stdio",
-      "streamable http", "mcp工具", "mcp tool",
-      "mcp inspector", "mcp transport", "mcp传输",
-      "oauth 2.1", "pkce", "elicitation",
-      "mcp registry", "mcp注册", "server.json",
-      "mcp-ui", "mcp app", "ui://", "mcp 2026",
-      "stateless", "无状态", "mcp无状态"],
+    # MCP Server 战队专项 — 与 route_workflow.py AGILE_MCP 组对齐（27个）
+    ([r"mcp", r"model context protocol", r"mcp server", r"mcp服务",
+      r"mcp服务器", r"fastmcp", r"mcp sdk", r"stdio",
+      r"streamable http", r"mcp工具", r"mcp tool",
+      r"mcp inspector", r"mcp transport", r"mcp传输",
+      r"oauth 2\.1", r"pkce", r"elicitation",
+      r"mcp registry", r"mcp注册", r"server\.json",
+      r"mcp-ui", r"mcp app", r"ui://", r"mcp 2026",
+      r"stateless", r"无状态", r"mcp无状态"],
      "🔌 MCP Server 战队", "MCP 服务器开发、工具设计、传输协议、无状态协议"),
 
     # AI/RAG 专项 — 与 route_workflow.py AGILE_AI 组对齐（11个）
-    (["prompt", "rag", "nl2sql", "text-to-sql",
-      "知识库", "向量", "embedding", "检索",
-      "幻觉", "ai评估", "agent"],
+    ([r"prompt", r"rag", r"nl2sql", r"text.?to.?sql",
+      r"知识库", r"向量", r"embedding", r"检索",
+      r"幻觉", r"ai评估", r"agent"],
      "🎯 AI-RAG 敏捷战队", "Prompt/RAG 调优，无大规模编码"),
 
     # 数据建模专项 — 与 route_workflow.py AGILE_ML 组对齐（16个）
-    (["数据分析", "数据清洗", "eda", "特征工程",
-      "建模", "机器学习", "模型训练", "训练集",
-      "csv", "excel", "数据处理", "数据画像",
-      "可视化", "bi", "报表", "统计"],
+    ([r"数据分析", r"数据清洗", r"eda", r"特征工程",
+      r"建模", r"机器学习", r"模型训练", r"训练集",
+      r"csv", r"excel", r"数据处理", r"数据画像",
+      r"可视化", r"bi", r"报表", r"统计"],
      "🎯 算法建模敏捷战队", "数据清洗、特征工程、模型训练"),
 
     # 大型项目 - 标准SOP — 与 route_workflow.py STANDARD 组对齐（17个）
-    (["电商平台", "管理系统", "平台架构", "企业级", "高并发", "秒杀",
-      "日活", "微服务", "多模块", "前后端分离", "架构设计",
-      "部署方案", "云原生", "kubernetes", "ci/cd", "devops", "容器化"],
+    ([r"电商平台", r"管理系统", r"平台架构", r"企业级", r"高并发", r"秒杀",
+      r"日活", r"微服务", r"多模块", r"前后端分离", r"架构设计",
+      r"部署方案", r"云原生", r"kubernetes", r"ci/cd", r"devops", r"容器化"],
      "🏗️ 标准 SOP", "中大型全栈项目"),
 
-    # Spring AI 项目 — 与 route_workflow.py SPRING 组对齐
-    (["spring", "spring ai", "springai", "spring boot", "springboot", "java"],
-     "🏗️ 标准 SOP + Spring AI", "Java/Spring AI 技术栈项目，架构师启用 Spring AI 选型"),
+    # Spring AI 项目 — server.py 特有组（route_workflow.py 通过 STANDARD 组
+    # 的架构设计类关键词路由后，由架构师启用 Spring AI 选型；此处为 MCP 端
+    # 提供显式 Spring 技术栈识别，归入标准 SOP）
+    ([r"spring", r"spring ai", r"springai", r"spring boot", r"springboot", r"java"],
+     "🏗️ 标准 SOP", "Java/Spring AI 技术栈项目，架构师启用 Spring AI 选型"),
 
     # 小型项目 - 快速模式 — 与 route_workflow.py QUICK 组对齐（16个）
-    (["帮我开发", "开发一个", "做一个", "写一个",
-      "贪吃蛇", "todo", "待办", "笔记",
-      "计算器", "闹钟", "小游戏", "小工具",
-      "cli", "脚本", "单页", "landing"],
+    ([r"帮我开发", r"开发一个", r"做一个", r"写一个",
+      r"贪吃蛇", r"todo", r"待办", r"笔记",
+      r"计算器", r"闹钟", r"小游戏", r"小工具",
+      r"cli", r"脚本", r"单页", r"landing"],
      "⚡ 快速模式", "单页面/小工具/CLI/≤10文件"),
 ]
 
@@ -280,8 +283,8 @@ def workflow_route(requirement: str) -> str:
     req_lower = requirement.lower()
     scores = {}
 
-    for keywords, workflow, desc in WORKFLOW_RULES:
-        score = sum(1 for kw in keywords if kw in req_lower)
+    for patterns, workflow, desc in WORKFLOW_RULES:
+        score = sum(1 for p in patterns if re.search(p, req_lower))
         if score > 0:
             scores[workflow] = (score, desc)
 

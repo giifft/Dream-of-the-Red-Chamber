@@ -41,6 +41,9 @@ class WorkflowType:
 
 
 # 工作流路由规则
+# 注意：本表是路由关键词的权威参考表（供 server.py 等外部实现对齐），
+# route_workflow() 的实际路由逻辑在 analyze_request() 的内联 patterns 中，
+# 两处必须保持语义一致。模式一律小写（匹配前先 lower()），通配符用 regex 语法。
 WORKFLOW_RULES = [
     # BugFix 优先
     (WorkflowType.BUGFIX, [
@@ -59,8 +62,8 @@ WORKFLOW_RULES = [
 
     # 安全加固专项
     (WorkflowType.AGILE_SEC, [
-        r"4A", r"权限", r"鉴权", r"脱敏", r"越权",
-        r"安全漏洞", r"注入", r"SSO", r"RBAC", r"ABAC"
+        r"4a", r"权限", r"鉴权", r"脱敏", r"越权",
+        r"安全漏洞", r"注入", r"sso", r"rbac", r"abac"
     ], "must_match_one"),
 
     # AI-Agent 战队专项
@@ -69,7 +72,7 @@ WORKFLOW_RULES = [
     (WorkflowType.AGILE_AGENT, [
         r"agent工作流", r"agent拓扑", r"工具注册", r"tool registry",
         r"记忆架构", r"memory架构", r"checkpoint", r"状态持久化",
-        r"HITL", r"human.?in.?the.?loop", r"黄金轨迹", r"golden trajectory",
+        r"hitl", r"human.?in.?the.?loop", r"黄金轨迹", r"golden trajectory",
         r"langgraph", r"autogen", r"crewai", r"agent评估",
         r"agent工具开发", r"agent重构", r"多agent", r"agent协作",
         r"agentops", r"agent.*可观测", r"agent.*护栏",

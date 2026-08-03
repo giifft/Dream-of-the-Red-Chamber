@@ -1,6 +1,6 @@
 {
   "name": "dream-of-the-red-chamber",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "description": "A 9-role full-stack development and data intelligence team covering PRD, UI/UX, AI/RAG, ML, architecture, engineering, QA, and DevOps. Deeply supports enterprise security (4A auth, RLS, data masking) and AI Agent safety.",
   "author": {
     "name": "giifft"

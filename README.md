@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Type: Multi-Agent](https://img.shields.io/badge/Type-Multi--Agent-blue.svg)](#)
-[![Version](https://img.shields.io/badge/Version-1.9.3-brightgreen.svg)](#changelog)
+[![Version](https://img.shields.io/badge/Version-1.9.4-brightgreen.svg)](#changelog)
 [![Platform](https://img.shields.io/badge/Platform-WorkBuddy%20%7C%20Codex%20%7C%20CodeBuddy-orange.svg)](#)
 [![MCP Server](https://img.shields.io/badge/MCP-Server-green.svg)](#mcp-server)
 [![Spring AI](https://img.shields.io/badge/Spring%20AI-Supported-brightgreen.svg)](#spring-ai)
@@ -150,6 +150,7 @@ python scripts/check_sop_phase.py --list
 
 | 版本 | 日期 | 要点 |
 |------|------|------|
+| v1.9.4 | 2026-07-31 | 第八轮审计：server.py WORKFLOW_RULES 改用 regex 匹配（修复通配符语义丢失 + human-in-the-loop 空格变体漏匹配）；route_workflow.py 死代码大写关键词修正（4A/SSO/RBAC/ABAC/HITL → 小写）；team-core.md 补 4 章节（274→325 行）；red-chamber-codex/SKILL.md 补 3 章节（284→323 行）；章节覆盖率 100% |
 | v1.9.3 | 2026-07-30 | 第六轮审计：server.py 关键词与 route_workflow.py 10 组精确对齐；三份 plugin.json 统一；red-chamber-codex/SKILL.md 补 8 章节（153→284 行）；team-core.md 补 5 敏捷战队+管理章节（194→274 行） |
 | v1.9.2 | 2026-07-30 | 第五轮审计：路由优先级守卫（has_large_scale）；角色构建改追加式 append；SKILL.md 全量同步补 13 章节；agentops 关键词去重；3 个敏捷战队独立章节 |
 | v1.9.1 | 2026-07-31 | 第四轮审计：MCP Server 关键词从 40→192 个；skill 内 learnings 与项目级同步；team-core/codex 路由表补齐；evals 12→16 条 |

@@ -85,3 +85,6 @@ skills/dream-team-workflow/learnings/checkpoint.json
 .agents/
 settings.json
 
+
+# Distribution packages (local-only, not tracked)
+dist/
